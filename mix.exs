@@ -18,6 +18,9 @@ defmodule Exmeal.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test,
         "coveralls.json": :test
+      ],
+      preferred_cli_env: [
+        "test.watch": :test
       ]
     ]
   end
@@ -54,7 +57,16 @@ defmodule Exmeal.MixProject do
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.10", only: :test},
       {:ex_machina, "~> 2.7.0"},
-      {:json_response, git: "https://github.com/joaopealves/json_response"}
+      {:json_response, git: "https://github.com/joaopealves/json_response"},
+      {:sobelow, "~> 0.8", only: :dev},
+      {:dialyxir, "~> 0.5.0", only: [:dev, :test], runtime: false},
+      {:mix_test_watch, "~> 1.0", only: [:dev, :test], runtime: false},
+      {:faker, "~> 0.17", only: [:dev, :test]},
+      {:money, "~> 1.9"},
+      {:tesla, "~> 1.4"},
+      {:hackney, "~> 1.17"},
+      {:mock, "~> 0.3.0", only: :test},
+      {:pbkdf2_elixir, "~> 1.3"}
     ]
   end
 
